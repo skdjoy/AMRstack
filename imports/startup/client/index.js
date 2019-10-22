@@ -3,6 +3,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 import {ApolloProvider} from "react-apollo";
+import {ApolloLink} from "apollo-link";
 import {ApolloClient} from "apollo-client";
 import {HttpLink} from "apollo-link-http";
 import {InMemoryCache} from "apollo-cache-inmemory";

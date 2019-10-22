@@ -4,7 +4,7 @@ import merge from "lodash/merge";
 
 import ResolutionSchema from "../../api/resolutions/Resolutions.graphql";
 import ResolutionsResolvers from "../../api/resolutions/resolvers";
-
+//hi
 const typeDefs = [
   `
         type Query {

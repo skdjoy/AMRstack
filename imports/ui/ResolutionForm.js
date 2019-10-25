@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
-import Resolutions from "../api/resolutions/resolutions";
 
 const createResolution = gql`
   mutation createResolution($name: String!) {

@@ -11,20 +11,28 @@ const createResolution = gql`
 `;
 
 class ResolutionForm extends Component {
+  state = {
+    error: null
+  };
+
   submitForm = () => {
     console.log(this.name.value);
-    this.props.createResolution({
-      variables: {
-        name: this.name.value
-      }
-    }).catch(error=>{
-      console.log(error);
-    });
+    this.props
+      .createResolution({
+        variables: {
+          name: this.name.value
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({ error: error.message });
+      });
   };
 
   render() {
     return (
       <div>
+        {this.state.error && <p>{this.state.error}</p>}
         <input type="text" ref={input => (this.name = input)} />
         <button onClick={this.submitForm}>Submit</button>
       </div>
@@ -35,8 +43,6 @@ class ResolutionForm extends Component {
 export default graphql(createResolution, {
   name: "createResolution",
   options: {
-    refetchQueries: [
-      "Resolutions"
-    ]
+    refetchQueries: ["Resolutions"]
   }
 })(ResolutionForm);

@@ -8,7 +8,7 @@ import ResolutionSchema from "../../api/resolutions/Resolutions.graphql";
 import ResolutionResolvers from "../../api/resolutions/resolvers";
 import UserSchema from "../../api/users/User.graphql";
 import UserResolvers from "../../api/users/resolvers";
-//hsss
+//hsssss
 const typeDefs = [GoalSchema, ResolutionSchema, UserSchema];
 
 const resolvers = merge(GoalResolvers, ResolutionResolvers, UserResolvers);
